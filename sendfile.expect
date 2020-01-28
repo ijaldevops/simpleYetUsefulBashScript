@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+# sending file to servers via scp
+# ssh passwordless already set
+# 
+
+set file [lindex $argv 0]
+set host [lindex $argv 1]
+
+spawn scp -r $file root@$host:/root/
+
+expect eof
