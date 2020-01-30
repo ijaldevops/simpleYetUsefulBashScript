@@ -1,0 +1,13 @@
+#!/usr/bin/expect -f
+set a [lindex $argv 0]
+spawn ssh root@10.0.6.220
+expect "assword" {send "zxiptv\r"}
+#set a 10
+
+#while loop execution 
+while { $a >= 0 } {
+   incr a -1
+	#puts "value of a: $a"
+   expect "#" {send "DFS_MODIFY_SUNIT:UNIT=16,SUNIT=31, DISKPOS=$a,DISKPOSCFG=1\r"}
+   #incr a -1
+}

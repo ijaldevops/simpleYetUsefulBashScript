@@ -1,0 +1,7 @@
+#!/usr/bin/expect -f
+spawn ssh -p 22 root@202.80.222.55
+
+expect "assword" {send "Mnciptv756_!^)\r"}
+expect "#" {send "hostname\r"}
+
+interact

@@ -1,0 +1,6 @@
+#!/usr/bin/expect -f
+
+for {set i [lindex $argv 0]} {$i > 0} {expr $i-1} {
+ set $total [expr $total * $i ]
+}
+puts "$total";
